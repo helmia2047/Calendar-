@@ -1,4 +1,4 @@
-# ⏱️ Chronos — AI-Powered Smart Calendar
+# ⏱️ MyDailyCal — AI-Powered Smart Calendar
 
 An iOS-inspired modern daily planner and calendar interface with real-time AI assistance powered by the Google Gemini API.
 
