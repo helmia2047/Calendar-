@@ -433,6 +433,21 @@ export default function App() {
         defaultTone={defaultTone}
         onToneChange={setDefaultTone}
       />
+
+      <footer
+        aria-label="Project links"
+        className="fixed bottom-2 left-2 z-40 rounded-md border border-gray-200/80 bg-white/90 px-2.5 py-1.5 text-[11px] text-stone-600 shadow-sm backdrop-blur dark:border-white/10 dark:bg-stone-900/90 dark:text-stone-300"
+      >
+        <a
+          href="https://github.com/helmia2047/Calendar-"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Calendar- on GitHub"
+          className="hover:text-google-blue hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue"
+        >
+          Calendar- on GitHub
+        </a>
+      </footer>
       
       <TaskCreationModal 
         isOpen={isCreationModalOpen}
