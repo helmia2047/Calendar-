@@ -487,6 +487,11 @@ async function startServer() {
     }
   });
 
+  app.get("/robots.txt", (_req, res) => {
+    res.type("text/plain");
+    res.send("User-agent: *\nAllow: /\n");
+  });
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
