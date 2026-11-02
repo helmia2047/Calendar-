@@ -1,4 +1,4 @@
-# ⏱️ MyDailyCal — AI-Powered Smart Calendar
+# ⏱️ MyDailyCalendar — AI-Powered Smart Calendar
 
 An iOS-inspired modern daily planner and calendar interface with real-time AI assistance powered by the Google Gemini API.
 
@@ -8,7 +8,7 @@ An iOS-inspired modern daily planner and calendar interface with real-time AI as
 ## ✨ Features
 
 - **Interactive Timeline Grid:** Clean day-view calendar to visualize time blocks, study sessions, and daily commitments.
-- **Chronos Assistant:** Conversational AI planner that adds, updates, and clears calendar events and tasks using natural language.
+- **MyDailyCalendar Assistant:** Conversational AI planner that adds, updates, and clears calendar events and tasks using natural language.
 - **Multi-Turn & Voice Support:** Control your schedule hands-free via real-time speech transcription and multi-turn chat.
 - **Customizable Alerts & Notifications:** Configurable lead-time reminders (5m, 10m, 15m, 30m) with audio chimes.
 - **Adaptive UI:** Minimalist light and dark themes designed for desktop and tablet screens.

@@ -1,6 +1,6 @@
 {
-  "name": "Chronos",
-  "short_name": "Chronos",
+  "name": "MyDailyCalendar",
+  "short_name": "MyDailyCalendar",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

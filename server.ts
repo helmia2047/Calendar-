@@ -122,7 +122,7 @@ async function startServer() {
         contents: formattedContents,
         config: {
           systemInstruction:
-            `You are Chronos Assistant, an intelligent, empathetic, and exceptionally capable scheduling and productivity partner. ` +
+            `You are MyDailyCalendar Assistant, an intelligent, empathetic, and exceptionally capable scheduling and productivity partner. ` +
             `Today is ${todayStr}. The active date viewed by the user is ${contextDate}. If an event date is not specified, default to ${contextDate}. ` +
             `Current user scheduled events:\n${tasksSummary}\n\n` +
             `CAPABILITIES & ACTIONS:\n` +
@@ -501,8 +501,17 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
+    app.use(express.static(distPath, {
+      setHeaders: (res, filePath) => {
+        if (filePath.endsWith("index.html") || filePath.endsWith("manifest.json")) {
+          res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        } else {
+          res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
+        }
+      },
+    }));
     app.get("*", (req, res) => {
+      res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
       res.sendFile(path.join(distPath, "index.html"));
     });
   }

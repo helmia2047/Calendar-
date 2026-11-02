@@ -33,6 +33,8 @@ interface ChatMessage {
   };
 }
 
+const CHAT_HISTORY_KEY = "mydailycalendar_chat_history_v2";
+
 interface SidebarProps {
   tasks: Task[];
   onAddTask: (task: Omit<Task, 'id' | 'isCompleted'> & { recurrence?: string }) => void;
@@ -46,7 +48,7 @@ interface SidebarProps {
 const DEFAULT_WELCOME_MESSAGE: ChatMessage = {
   id: 'welcome-msg',
   role: 'assistant',
-  text: "Hello! I'm Chronos Assistant powered by  Flash. I can plan your timetable, add, delete, or reschedule events in bulk, answer questions, or transcribe your voice instructions. How can I help today?",
+  text: "Hello! I'm MyDailyCalendar Assistant powered by Flash. I can plan your timetable, add, delete, or reschedule events in bulk, answer questions, or transcribe your voice instructions. How can I help today?",
   timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
 };
 
@@ -69,7 +71,7 @@ export function Sidebar({
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>(() => {
     try {
-      const saved = localStorage.getItem("chronos_chat_history_v2");
+      const saved = localStorage.getItem(CHAT_HISTORY_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
@@ -108,7 +110,7 @@ export function Sidebar({
   // Save conversation history to local storage
   useEffect(() => {
     try {
-      localStorage.setItem("chronos_chat_history_v2", JSON.stringify(messages));
+      localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(messages));
     } catch (e) {
       console.warn("Failed to persist chat history:", e);
     }
@@ -131,7 +133,7 @@ export function Sidebar({
     }];
     setMessages(fresh);
     try {
-      localStorage.setItem("chronos_chat_history_v2", JSON.stringify(fresh));
+      localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(fresh));
     } catch {
       // ignored
     }
@@ -300,7 +302,7 @@ export function Sidebar({
           <div>
             <div className="flex items-center gap-1.5">
               <h2 className="text-sm font-bold text-gray-900 dark:text-white leading-tight">
-                Chronos Assistant
+                MyDailyCalendar Assistant
               </h2>
               
             </div>
@@ -508,7 +510,7 @@ export function Sidebar({
           <textarea 
             ref={textareaRef}
             rows={1}
-            placeholder={isRecording ? "Recording in progress..." : "Ask Chronos or plan schedule..."}
+            placeholder={isRecording ? "Recording in progress..." : "Ask MyDailyCalendar or plan schedule..."}
             value={input}
             disabled={isRecording || isTranscribing}
             onChange={e => setInput(e.target.value)}

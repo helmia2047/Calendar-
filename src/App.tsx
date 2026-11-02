@@ -442,10 +442,10 @@ export default function App() {
           href="https://github.com/helmia2047/Calendar-"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit Calendar- on GitHub"
+          aria-label="Visit MyDailyCalendar on GitHub"
           className="hover:text-google-blue hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue"
         >
-          Calendar- on GitHub
+          MyDailyCalendar on GitHub
         </a>
       </footer>
       

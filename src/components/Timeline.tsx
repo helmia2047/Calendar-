@@ -362,8 +362,8 @@ export function Timeline({
             <line x1="32" y1="38" x2="68" y2="38" strokeWidth="10" />
             <line x1="32" y1="62" x2="68" y2="62" strokeWidth="10" />
           </svg>
-          <span className="text-base font-black tracking-[0.15em] text-gray-900 dark:text-white shrink-0 font-sans uppercase">
-            CHRONOS
+          <span className="text-base font-black tracking-[0.15em] text-gray-900 dark:text-white shrink-0 font-sans">
+            MyDailyCalendar
           </span>
         </div>
 
