@@ -1,0 +1,13 @@
+name: Ping Bot
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render app
+        run: curl -s https://mycalender-lqtx.onrender.com/
