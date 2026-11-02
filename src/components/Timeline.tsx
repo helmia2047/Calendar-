@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { format, startOfWeek, endOfWeek, addDays, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, addWeeks, addMonths, eachMonthOfInterval, startOfYear, endOfYear } from "date-fns";
-import { Check, Search, X, Calendar as CalendarIcon, Clock, AlignLeft, RefreshCw, Trash2, Settings, Pencil, Save, Sparkles, Brain, Lightbulb, Loader2, Award, ChevronRight, Activity, Bot, Plus, History, ChevronLeft, ChevronDown, Bell, BellRing, Volume2, VolumeX } from "lucide-react";
+import { Check, Search, X, Calendar as CalendarIcon, Clock, AlignLeft, RefreshCw, Trash2, Settings, Pencil, Save, Sparkles, Brain, Lightbulb, Loader2, Award, ChevronRight, Activity, Bot, Plus, History, ChevronLeft, ChevronDown, Bell, BellRing, Volume2, VolumeX, Github } from "lucide-react";
 import { Task, TaskReminderLeadTime, NotificationTone } from "../types";
 import { START_HOUR, END_HOUR, ROW_HEIGHT_PX, cn, format12Hour, formatNotificationTime } from "../lib/utils";
 import { parseNaturalLanguageTask } from "../lib/naturalLanguage";
@@ -567,6 +567,20 @@ export function Timeline({
                           <Volume2 className="w-4 h-4" />
                         </button>
                       </div>
+                    </section>
+                    <section className="mt-5 pt-4 border-t border-gray-100 dark:border-white/10">
+                      <a
+                        href="https://github.com/helmia2047/Calendar-"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit MyDailyCalendar on GitHub"
+                        onClick={() => setIsSettingsOpen(false)}
+                        className="flex items-center gap-2.5 rounded-lg border border-gray-200 px-3 py-2 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-50 dark:border-white/10 dark:text-gray-200 dark:hover:bg-white/5"
+                      >
+                        <Github className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                        <span className="flex-1">MyDailyCalendar on GitHub</span>
+                        <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
+                      </a>
                     </section>
                   </div>
                 </>
